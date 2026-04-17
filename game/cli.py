@@ -160,3 +160,40 @@ def play_game():
         print("-----------------------")
         print("Human amount",human.amount)
         print("Human bet amount",human.bet)
+
+        pc_choice=pc.auto_call_raise(player=human,k=k)
+
+        if pc_choice=="l":
+            print("Human Won")
+            return
+
+        print("pc amount",pc.amount)
+        print("pc bet amount",pc.bet)
+        print("-----------------------")
+
+    print("-------------------")
+    print("Completed 3rd betting round")
+    print("---------------------")
+    deck=game.deck
+    deck.burn_card()
+    game.community_cards.append(deck.give_card())
+    game.print_community_card()
+    print("--------------------")
+    game.pot=human.bet+pc.bet
+    human.reset_bet()
+    pc.reset_bet()
+    #setter on pot
+    print("All money moved to betting pot")
+    print("POT AMOUNT ",game.pot)
+    print("--------------------")
+
+    print("-------------------")
+    print("Starting 3nd betting round")
+    print("---------------------")
+
+    #check for the winner
+
+    
+
+
+
