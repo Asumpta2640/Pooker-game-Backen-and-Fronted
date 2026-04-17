@@ -39,3 +39,51 @@ class Deck():
         for card in deck:
             card.print_card()
             print("-------------")
+
+    def burn_card(self):
+        #print("before buring deck")
+        #self.print_deck()
+        #print("After buring")
+        top_card=self.deck[0]
+        self.deck.pop(0)
+        self.deck.append(top_card)
+        #self.print_deck()
+        pass
+    ##
+
+    def give_card(self):
+        #->take a card out of the deck from the end deck 
+        #and give it out
+        top_card=self.deck[0]
+        self.deck.pop(0)
+        return top_card
+        
+if __name__=="__main__":
+    d1=Deck()
+    d1.shuffle()
+    human_cards=[d1.give_card(),
+                 d1.give_card(),
+                 d1.give_card(),
+                 d1.give_card(),
+                d1.give_card(),
+                d1.give_card(),
+                d1.give_card()
+                 ]
+
+    for card in human_cards:
+        card.print_card()
+
+    royal=["A","K","Q","J","10"]
+
+    sorted_cards=[]
+
+    for rank in royal:
+        for card in human_cards:
+            if card.rank==rank:
+                sorted_cards.append(card)
+
+    print("Sorted cards")
+    for card in sorted_cards:
+        card.print_card()
+
+
