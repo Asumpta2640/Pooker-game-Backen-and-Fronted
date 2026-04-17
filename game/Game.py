@@ -39,3 +39,20 @@ class Game():
             raise ValueError("The turn must be assined to a player object")
 
     
+
+        #self.turn=self.human
+        
+#object oriented programming 
+if __name__=="__main__":
+    game=Game()
+    game.deck.print_deck()
+    print("This is the deck")
+    print("Pc cards")
+    game.pc.cards[0].print_card()
+    game.pc.cards[1].print_card()
+    print("This is the deck")
+    print("Human cards")
+    game.human.cards[0].print_card()
+    game.human.cards[1].print_card()
+    #print("This is the deck")
+    #game.deck.print_deck()
